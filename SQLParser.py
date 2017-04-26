@@ -7,10 +7,10 @@ fhand = open('SQLString.txt')
 #fhand = open('Debug.txt')
 fout = open('Result.txt', 'w')
 
-startKeyWordString = [' SELECT ', ' Select ', ' select ',
-                      ' INSERT INTO ', ' Insert Into ',
-                      ' UPDATE ', ' Update ',
-                      ' DELETE FROM ', ' Delete From ']
+startKeyWordString = [' SELECT ', ' Select ', ' select ', 'SELECT ', 'Select ', 'select ', 
+                      ' INSERT INTO ', ' Insert Into ', 'INSERT INTO ', 'Insert Into ',
+                      ' UPDATE ', ' Update ', 'UPDATE ', 'Update ',
+                      ' DELETE FROM ', ' Delete From ', 'DELETE FROM ', 'Delete From ']
 
 keywordString = [' FROM ', ' From ', ' from ', 'INNER JOIN ', ' LEFT JOIN ', ' RIGHT JOIN ', ' FULL JOIN ', ' LEFT OUTER JOIN ', ' RIGHT OUTER JOIN ',
                  ' INSERT INTO ', ' Insert Into ',
@@ -27,7 +27,7 @@ firstLine = True;
 for line in fhand:
     totalCount = totalCount + 1
     isSQL = False
-    
+        
     adjustedLine = line.lstrip()
     adjustedLine = ' ' + adjustedLine
     
@@ -35,6 +35,10 @@ for line in fhand:
         if adjustedLine.startswith(startKey):
             isSQL = True
             break
+        if startKey in adjustedLine:
+            isSQL = True
+            break
+        
     if isSQL:
         count = count + 1
         stringToWrite = '';
