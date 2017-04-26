@@ -46,7 +46,12 @@ for line in fhand:
             for i in range (1, len(a)):
                 #print ('a[i]: ', a[i])
                 
-                b = a[i].lstrip().split(' ')
+                aa = a[i].lstrip()
+                aa = aa.replace(',', ', ')
+                
+                b = aa.split(' ')
+                
+                
                 #print ('b[0]: ', b[0])
                 
                 c = b[0];
@@ -102,6 +107,11 @@ for line in fhand:
                             c = b[j]
                             if (c.endswith(',')):
                                  j = j + 1
+                                 d = c.split(',')
+                                 if (key in fromKeywordsString and len(d) >= 2):
+                                     for jj in range (1, len(d)-1):
+                                         stringToWrite = stringToWrite + d[jj]
+                                         stringToWrite = stringToWrite + ','
                             else:
                                 break
                             
