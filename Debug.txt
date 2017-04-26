@@ -1,0 +1,2 @@
+Select a from b_b, c_c d, e
+Select a from B, C aC, D, E aE, FFF aFFF, G aG Where a = s
