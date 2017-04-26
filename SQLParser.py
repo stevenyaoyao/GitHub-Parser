@@ -115,6 +115,9 @@ for line in fhand:
         if (stringToWrite.endswith(';')):
             stringToWrite = stringToWrite[:-1]
         
+        if (stringToWrite.endswith('.\\')):
+            stringToWrite = stringToWrite[:-2]
+        
         stringToWrite = stringToWrite.replace(';', ',')
         
         if stringToWrite not in emptyAfterFromString:
