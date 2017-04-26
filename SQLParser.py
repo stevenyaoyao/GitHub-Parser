@@ -50,8 +50,6 @@ for line in fhand:
                 aa = aa.replace(',', ', ')
                 
                 b = aa.split(' ')
-                
-                
                 #print ('b[0]: ', b[0])
                 
                 c = b[0];
@@ -120,10 +118,6 @@ for line in fhand:
                             else:
                                 break
                 
-                #if key in nonDuplicationKeyworkString:
-                #    break
-                #if (i == len(a) - 1):
-                    #lastString = b[1]
         #if ("\n" not in lastString):
         #Remove last comma
         stringToWrite = stringToWrite[:-1]
