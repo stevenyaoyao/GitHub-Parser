@@ -10,7 +10,8 @@ fout = open('Result.txt', 'w')
 startKeyWordString = [' SELECT ', ' Select ', ' select ', 'SELECT ', 'Select ', 'select ', 
                       ' INSERT INTO ', ' Insert Into ', 'INSERT INTO ', 'Insert Into ',
                       ' UPDATE ', ' Update ', 'UPDATE ', 'Update ',
-                      ' DELETE FROM ', ' Delete From ', 'DELETE FROM ', 'Delete From ']
+                      ' DELETE FROM ', ' Delete From ', 'DELETE FROM ', 'Delete From ', ' delete from ',
+                      ' call ', ' call', 'call ', 'call']
 
 keywordString = [' FROM ', ' From ', ' from ', 'INNER JOIN ', ' LEFT JOIN ', ' RIGHT JOIN ', ' FULL JOIN ', ' LEFT OUTER JOIN ', ' RIGHT OUTER JOIN ',
                  ' INSERT INTO ', ' Insert Into ',
@@ -142,6 +143,14 @@ for line in fhand:
         if (firstLine):
             fout.write('Tables_Contained_In_SQL')
             firstLine = False
+        
+        if (adjustedLine.startswith(' #') and '.txt' not in adjustedLine and '.bat' not in adjustedLine and '.log' not in adjustedLine and '.csv' not in adjustedLine):
+            s1 = adjustedLine.lstrip()
+            s2 = s1.split(' ')
+            resultString = s2[0].rstrip('\n')
+            
+            fout.write(resultString)
+        
         fout.write('\n')
 print ('Total Line Count: ', totalCount)
 print ('Line Count: ', count)
