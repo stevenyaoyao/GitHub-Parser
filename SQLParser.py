@@ -71,6 +71,8 @@ for line in fhand:
                             c = c[:-1]
                         
                             stringToWrite = stringToWrite + c
+                            if (stringToWrite.endswith(';')):
+                                stringToWrite = stringToWrite[:-1]
                             stringToWrite = stringToWrite + ','
                             
                             j = j + 1
@@ -82,6 +84,8 @@ for line in fhand:
                         else:
                             c = c.rstrip('\n')
                             stringToWrite = stringToWrite + c
+                            if (stringToWrite.endswith(';')):
+                                stringToWrite = stringToWrite[:-1]
                             stringToWrite = stringToWrite + ','
                             
                             j = j + 1
@@ -104,6 +108,7 @@ for line in fhand:
                 #if (i == len(a) - 1):
                     #lastString = b[1]
         #if ("\n" not in lastString):
+        #Remove last comma
         stringToWrite = stringToWrite[:-1]
         #stringToWrite2= stringToWrite.replace('#', '')
         
