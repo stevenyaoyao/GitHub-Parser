@@ -40,14 +40,14 @@ for line in fhand:
         stringToWrite = '';
         for key in keywordString:
             a = adjustedLine.split(key)
-            print ("Start: ", a)
-            print ('Key: ', key)
-            print (len(a))
+            #print ("Start: ", a)
+            #print ('Key: ', key)
+            #print (len(a))
             for i in range (1, len(a)):
-                print ('a[i]: ', a[i])
+                #print ('a[i]: ', a[i])
                 
                 b = a[i].lstrip().split(' ')
-                print ('b[0]: ', b[0])
+                #print ('b[0]: ', b[0])
                 
                 c = b[0];
                 
@@ -66,7 +66,7 @@ for line in fhand:
                     j = 0
                     while True: # for multiple tables after from
                         c = b[j]
-                        print ('j =', j, ' c: ', c)
+                        #print ('j =', j, ' c: ', c)
                         if (c.endswith(',')):
                             c = c[:-1]
                         
@@ -114,7 +114,9 @@ for line in fhand:
         
         if (stringToWrite.endswith(';')):
             stringToWrite = stringToWrite[:-1]
-            
+        
+        #stringToWrite.replace(';', ',')
+        
         if stringToWrite not in emptyAfterFromString:
             fout.write(stringToWrite)
         fout.write('\n')
