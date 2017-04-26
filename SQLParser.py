@@ -115,7 +115,6 @@ for line in fhand:
         if (stringToWrite.endswith(';')):
             stringToWrite = stringToWrite[:-1]
         
-        #stringToWrite.replace(';', ',')
         
         if stringToWrite not in emptyAfterFromString:
             fout.write(stringToWrite)
