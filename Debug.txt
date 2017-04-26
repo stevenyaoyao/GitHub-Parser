@@ -1,1 +1,1 @@
-select A From #1#1 where (select C from #2#.2 a, #3#3 d where C from #4#4 a, #5#5 b,#6#.6, #7#7, #8#8 e where select 1 from #9#9 where
+select A From #1#1 where (select C from #2#.2 a, #3#3 d where C from #4#4 a, #5#5 b,#6#.6 c, #7#7, #8#8 e where select 1 from #9#9 where
