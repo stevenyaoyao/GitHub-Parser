@@ -67,6 +67,7 @@ for line in fhand:
                     while True: # for multiple tables after from
                         c = b[j]
                         #print ('j =', j, ' c: ', c)
+                       
                         if (c.endswith(',')):
                             c = c[:-1]
                         
@@ -80,8 +81,14 @@ for line in fhand:
                             if key in fromKeywordsString:
                                 continue
                             else:
-                                break;
+                                break
                         else:
+                            #if (c == ' '):
+                            if len(c) == 0:
+                                j = j + 1
+                                continue
+                            if (c.startswith('(')):
+                                break
                             c = c.rstrip('\n')
                             stringToWrite = stringToWrite + c
                             if (stringToWrite.endswith(';')):
