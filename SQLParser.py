@@ -15,7 +15,8 @@ startKeyWordString = [' SELECT ', ' Select ', ' select ', 'SELECT ', 'Select ', 
 
 keywordString = [' FROM ', ' From ', ' from ', 'INNER JOIN ', ' LEFT JOIN ', ' RIGHT JOIN ', ' FULL JOIN ', ' LEFT OUTER JOIN ', ' RIGHT OUTER JOIN ',
                  ' INSERT INTO ', ' Insert Into ',
-                 ' UPDATE ', ' Update ']
+                 ' UPDATE ', ' Update ',
+                 'call ']
 
 fromKeywordsString =  [' FROM ', ' From ', ' from ']
 emptyAfterFromString = ['WHERE', 'Where', 'where']
@@ -131,6 +132,9 @@ for line in fhand:
         if (stringToWrite.endswith(';')):
             stringToWrite = stringToWrite[:-1]
         
+        if (stringToWrite.endswith('}')):
+            stringToWrite = stringToWrite[:-1]
+            
         if (stringToWrite.endswith('.\\')):
             stringToWrite = stringToWrite[:-2]
         
